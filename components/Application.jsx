@@ -1,12 +1,16 @@
 /*globals document*/
 
 import React from 'react';
-import Nav from './Nav';
+import Nav from './Nav.jsx';
 import ApplicationStore from '../stores/ApplicationStore';
 import { connectToStores, provideContext } from 'fluxible-addons-react';
 import { handleHistory } from 'fluxible-router';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+injectTapEventPlugin();
 
 class Application extends React.Component {
+
     render() {
         var Handler = this.props.currentRoute.get('handler');
 

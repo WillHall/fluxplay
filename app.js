@@ -1,5 +1,5 @@
 import Fluxible from 'fluxible';
-import Application from './components/Application';
+import Application from './components/Application.jsx';
 import ApplicationStore from './stores/ApplicationStore';
 import RouteStore from './stores/RouteStore';
 

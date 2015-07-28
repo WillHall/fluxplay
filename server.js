@@ -18,7 +18,7 @@ import { createElementWithContext } from 'fluxible-addons-react';
 const htmlComponent = React.createFactory(HtmlComponent);
 const env = process.env.NODE_ENV;
 
-const debug = debugLib('the-funs');
+const debug = debugLib('fluxplay');
 
 const server = express();
 server.use('/public', express.static(path.join(__dirname, '/build')));

@@ -5,7 +5,7 @@ import debug from 'debug';
 import { createElementWithContext } from 'fluxible-addons-react';
 import app from './app';
 
-const debugClient = debug('the-funs');
+const debugClient = debug('fluxplay');
 const dehydratedState = window.App; // Sent from the server
 
 window.React = React; // For chrome dev tool support
