@@ -3,6 +3,10 @@ import ApplicationStore from '../stores/ApplicationStore';
 
 class Html extends React.Component {
     render() {
+        let bodyStyle = {
+            background: '#fff url(/public/images/grey.png) repeat'
+        };
+
         return (
             <html>
             <head>
@@ -12,7 +16,7 @@ class Html extends React.Component {
                 <link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500" rel="stylesheet" type="text/css" />
                 <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css" />
             </head>
-            <body>
+            <body style={bodyStyle}>
                 <div id="app" dangerouslySetInnerHTML={{__html: this.props.markup}}></div>
             </body>
             <script dangerouslySetInnerHTML={{__html: this.props.state}}></script>

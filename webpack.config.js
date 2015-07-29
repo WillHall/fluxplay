@@ -1,5 +1,10 @@
 var webpack = require('webpack');
 var path = require('path');
+var fs = require('fs-extra');
+
+fs.copy('public/images', 'build/images', function(err) {
+    if (err) return console.error('Error copying image assets:', err);
+});
 
 var webpackConfig = {
     resolve: {
@@ -11,13 +16,15 @@ var webpackConfig = {
         './client.js'
     ],
     output: {
-        path: path.resolve('./build/js'),
-        publicPath: '/public/js/',
-        filename: 'main.js'
+        path: path.resolve('./build'),
+        publicPath: '/public/',
+        filename: 'js/main.js'
     },
     module: {
         loaders: [
             { test: /\.css$/, loader: 'style!css' },
+            // { test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/, loader: "file-loader" },
+            { test: /\.png/, loader: "url-loader?limit=100000&mimetype=image/png" },
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,

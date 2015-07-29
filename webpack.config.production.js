@@ -9,13 +9,14 @@ var webpackConfig = {
         './client.js'
     ],
     output: {
-        path: path.resolve('./build/js'),
-        publicPath: '/public/js/',
-        filename: 'main.min.js'
+        path: path.resolve('./build'),
+        publicPath: '/public/',
+        filename: 'js/main.min.js'
     },
     module: {
         loaders: [
             { test: /\.css$/, loader: 'style!css' },
+            { test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/, loader: "file-loader" },
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
